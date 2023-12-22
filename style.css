@@ -1,0 +1,709 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+  width: 100%;
+}
+.container {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container nav {
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 10px;
+    background-color: white;
+    border-radius: 5px;
+    z-index: 96;
+}
+.container .nvgs{
+  height: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .nvgs input{
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 15px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 101;
+}
+.container .nvgs span{
+  display: block;
+  height: 3px;
+  width: 28px;
+  background-color: black;
+  transition: .8s;
+}
+.container .nvgs span:nth-child(2){
+  width: 28px;
+  transform-origin: 0 0;
+}
+.container .nvgs input:checked ~ span:nth-child(2){
+  transform: rotate(45deg) translate(-1px,-1px);
+  width: 28px;
+}
+.container .nvgs span:nth-child(4){
+  width: 20px;
+  transform-origin: 0 100%;
+}
+.container .nvgs input:checked ~ span:nth-child(4){
+  transform: rotate(-45deg) translate(-1px,0);
+  width: 28px;
+}
+.container .nvgs span:nth-child(3){
+  width: 24px;
+}
+.container .nvgs input:checked ~ span:nth-child(3){
+  transform: scale(0);
+  opacity: 0;
+  width: 28px;
+}
+.container nav ul{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+.container nav ul li a{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+.container .logo{
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  border-radius: 10px;
+}
+.container .logo img{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  background-repeat: no-repeat;  
+  border-radius: 10px;
+}
+.container .home{
+  width: 100%;
+  height: 700px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+.container .home .homePerkenalan{
+  width: 360px;
+  height: 360px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hPAktif{
+  transform: translateY(0);
+  opacity: 1;
+}
+.container .home .homePerkenalan p{
+  font-family: 'Poppins', sans-serif;
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+.container .home .homePerkenalan p.hPAktif{
+  transform: translateX(0);
+  opacity: 1;
+}
+.container .home .homePerkenalan p:nth-child(1){
+  font-size: 20px;
+  font-weight: bolder;
+}
+.container .home .homePerkenalan p:nth-child(2){
+  font-size: 35px;
+  font-weight: bold;
+}
+.container .home .homePerkenalan p:nth-child(3){
+  font-size: 25px;
+  font-weight: 300;
+}
+.container .home .homePerkenalan .homeSosmed button{
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  border: 2px solid black;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+.container .home .homePerkenalan .homeSosmed button.bAktif{
+  transform: translateY(0);
+  opacity: 1;
+}
+.container .home .homePerkenalan .homeSosmed button:hover{
+  background-color: black;
+  color: white;
+}
+.container .home .homePicture{
+  height: 300px;
+  width: 300px;
+  background-color: #00c1c6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgb(0,0,0,0.25);
+}
+.container .home .homePicture .rdsHome{
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(to bottom right,salmon,yellow);
+  border-radius: 75% 25% 31% 69% / 67% 65% 35% 33% ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .home .homePicture .rdsHome img{
+  width: 150px;
+  height: 150px;
+  border-radius: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.homePicture{
+  height: 300px;
+  width: 300px;
+  background-color: #00c1c6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-25px);
+  opacity: 0;
+  transition: all .8s ease-in-out;
+}
+.hAktif{
+  transform: translateY(0);
+  opacity: 1;
+}
+.homePicture .rdsHome{
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(to bottom right,salmon,yellow);
+  border-radius: 75% 25% 31% 69% / 67% 65% 35% 33% ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.homePicture .rdsHome img{
+  width: 150px;
+  height: 150px;
+  border-radius: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .about{
+  width: 100%;
+  height: 700px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+.container .about .aboutParagraf{
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.container .about .aboutParagraf .aboutTeks1{
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  border-bottom: 2px solid black;
+  font-family: 'Poppins', sans-serif;
+}
+.container .about .aboutParagraf .aboutTeks2{
+  width: 100%;
+  height: 310px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(80px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+.container .about .aboutParagraf .aboutTeks2 p span{
+  font-weight: bold;
+  color: aqua;
+}
+.container .about .aboutParagraf .aboutTeks2.hAktif{
+  transform: translateY(0);
+  opacity: 1;
+}
+.container .about .aboutParagraf .aboutTeks2 p{
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+}
+.container .about .aboutGambar{
+  width: 360px;
+  height: 200px;
+  background-color: green;
+  background-image: url('myIdol.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-100px);
+  transition: all 1s ease-in-out;
+  box-shadow: 0 5px 15px rgb(0,0,0,0.25);
+}
+.container .about .aboutGambar.bgAktif{
+  transform: translateX(0);
+}
+.container .about .aboutGambar p{
+  font-size: 35px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px black;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Halaman Projek */
+ .container .projek{
+   box-sizing: border-box;
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   padding: 10px;
+   gap: 10px;
+ }
+ .container .projek .halamanProjek{
+   width: 100%;
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   padding: 10px;
+ }
+ .container .projek .halamanProjek .ProjekH1{
+   height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  border-bottom: 2px solid black;
+  font-family: 'Poppins', sans-serif;
+ }
+ .container .projek .ProjectList{
+   width: 1000px;
+   box-sizing: border-box;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   padding: 10px;
+   gap: 10px;
+ }
+ .container .projek .ProjectList .ListPertama{
+   width: 350px;
+   height: 350px;
+   background: linear-gradient(to bottom,black,limegreen);
+   border-radius: 10px;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   overflow: hidden;
+   box-shadow: 0 5px 15px rgb(0,0,0,0.25);
+ }
+ .container .projek .ProjectList .ListPertama:nth-child(1){
+   background-image: url('tokoOnline.jpg');
+   transform: translateX(100px);
+   transition: all .6s ease-in-out;
+ }
+ .container .projek .ProjectList .ListPertama:nth-child(1).Aktf{
+   transform: translateX(0);
+ }
+ .container .projek .ProjectList .ListPertama:nth-child(2){
+   background-image: url('PortfolioHtmlCss.jpg');
+   transform: translateX(-100px);
+   transition: all .6s ease-in-out;
+ }
+ .container .projek .ProjectList .ListPertama:nth-child(2).kdktf{
+   transform: translateX(0);
+ }
+ .container .projek .ProjectList .ListPertama .lpPic{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+   background-color: rgb(255,255,255);
+   transform: translateY(30px);
+   opacity: 0;
+   transition: all .8s ease;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+ }
+ .container .projek .ProjectList .ListPertama .lpPic.lHov{
+   transform: translateY(0);
+   opacity: 1;
+ }
+ .container .projek .ProjectList .ListPertama .lpPic p{
+   font-size: 25px;
+   font-weight: 500;
+   color: black;
+   font-family: 'Poppins', sans-serif;
+ }
+ .container .projek .ProjectList .ListPertama .lpPic button{
+   padding: 10px 20px;
+  background-color: transparent;
+  border-radius: 20px;
+  border: 2px solid black;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+ }
+ .container .projek .ProjectList .ListPertama .lpPic button a{
+   text-decoration: none;
+   color: black;
+ }
+ .container .projek .ProjectList .ListPertama .lpPic button:hover{
+   background-color: white;
+ }
+/* Halaman Projek End */
+
+/* Halaman Skils */
+.container .skil{
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+.container .skil .skilh1{
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  border-bottom: 2px solid black;
+  font-family: 'Poppins', sans-serif;
+}
+.container .skil .daftarSkil{
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+}
+.container .skil .daftarSkil .html{
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgb(0,0,0,0.25);
+  border-radius: 5px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all .8s ease-in-out;
+}
+.container .skil .daftarSkil .html.hh{
+  transform: translateY(0);
+  opacity: 1;
+}
+.container .skil .daftarSkil .html:hover{
+  background-color: rgb(0,0,0,0.30);
+  color: white;
+  box-shadow: 0 5px 15px rgb(255,255,255,0.25);
+}
+.container .skil .daftarSkil .html img{
+  width: 80%;
+  height: 80%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container .skil .daftarSkil .css{
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  background-color: white;
+  box-shadow: 0 5px 15px rgb(0,0,0,0.25);
+  border-radius: 5px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all .8s ease-in-out;
+}
+.container .skil .daftarSkil .css.cc{
+  transform: translateY(0);
+  opacity: 1;
+}
+.container .skil .daftarSkil .css:hover{
+  background-color: rgb(0,0,0,0.30);
+  color: white;
+  box-shadow: 0 5px 15px rgb(255,255,255,0.25);
+}
+.container .skil .daftarSkil .css img{
+  width: 80%;
+  height: 80%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* Halaman Skils end */
+
+/* Halaman Kontak */
+.container .kontak{
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+}
+.container .kontak .h1k{
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bolder;
+  border-bottom: 2px solid black;
+  font-family: 'Poppins', sans-serif;
+}
+.container .kontak .sosmedKontak{
+  width: 400px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+.container .kontak .sosmedKontak .no{
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+.container .kontak .sosmedKontak .no .noIcon{
+  width: 30%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px;
+}
+.container .kontak .sosmedKontak .no .noIcon i{
+  font-size: 20px;
+  font-weight: bolder;
+}
+.container .kontak .sosmedKontak .no .noAngka{
+  width: 300px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+}
+.container .kontak .sosmedKontak .no .noAngka p{
+  font-size: 15px;
+  font-weight: 300;
+}
+/* Halaman Kontak end */
+
+footer{
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  background-color: #333;
+}
+footer p{
+  font-size: 15px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 1980px) {
+  .container nav{
+    width: 1500px;
+  }
+  .container nav ul{
+    width: 80%;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 1280px) {
+    .container nav {
+        justify-content: center;
+        width: 1150px;
+    }
+    .container nav ul{
+      width: 70%;
+      justify-content: space-around;
+      order: 3;
+    }
+    .container .logo{
+      order: 2;
+    }
+}
+@media(max-width: 1001px){
+  .container nav{
+    width: 950px;
+  }
+  .container .projek .ProjectList{
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+    .container nav {
+        justify-content: space-between;
+        width: 750px;
+    }
+    .container nav ul{
+      order: 2;
+      box-sizing: border-box;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+      height: 250px;
+      background-color: white;
+      box-shadow: 0 5px 15px rgb(0,0,0,0.25);
+      border-bottom-right-radius: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-300px);
+      transition: 0.8s;
+      z-index: 98;
+    }
+    .container nav ul.ulAktif{
+      transform: translateX(0);
+    }
+    .container .logo{
+      order: 3;
+    }
+    .container .nvgs{
+      display: flex;
+      order: 1;
+      z-index: 99;
+    }
+}
+@media (max-width: 600px) {
+  .container nav{
+    width: 550px;
+  }
+}
+@media (max-width: 500px) {
+  .container nav{
+    width: 450px;
+  }
+}
+@media (max-width: 400px) {
+  .container nav{
+    width: 350px;
+  }
+  .container .kontak .sosmedKontak{
+    width: 100%;
+  }
+}
+@media(max-width: 351px){
+  .container nav{
+    width: 300px;
+  }
+  .container .about .aboutParagraf{
+    width: 100%;
+    height: 351px;
+  }
+}
+@media(max-width: 200px){
+  .container nav{
+    width: 180px;
+  }
+  .container .about .aboutParagraf{
+    width: 100%;
+    height: 200px;
+  }
+}
