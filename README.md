@@ -1,7 +1,7 @@
 [![MasterHead](https://1.bp.blogspot.com/-7A4WynwLsM...)](https://rishavchanda.io)
 <h1 align="center">Hi 👋, I'm Muchammad Fachri Syakur</h1>
 <h3 align="center">A passionate frontend developer from Indonesia</h3>
-<img src='https://pin.it/6g3KCBqhc' alt='coding' align='right' width='400px'/>
+<img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F567523990538356835%2F&psig=AOvVaw309zgqwY4JpapYWFyH-AYd&ust=1722304366766000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCMjD8PKRy4cDFQAAAAAdAAAAABAl' alt='coding' align='right' width='400px'/>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=muchammadfachrisyakur&label=Profile%20views&color=0e75b6&style=flat" alt="muchammadfachrisyakur" /> </p>
 
